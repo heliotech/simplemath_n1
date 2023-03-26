@@ -48,7 +48,7 @@ khaz pykhaz@o2.pl
 Homepage
 --------
 
-https://github.com/heliotech/simplemath
+https://github.com/heliotech/simplemath_n1
 
 Irresponsibility disclaimer
 ----------------------------
