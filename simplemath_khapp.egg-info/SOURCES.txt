@@ -1,0 +1,13 @@
+LICENSE
+README.rst
+pyproject.toml
+simplemath/__init__.py
+simplemath/fancy.py
+simplemath/mutils.py
+simplemath/pyadvanced.py
+simplemath/simple.py
+simplemath/smlib.py
+simplemath_khapp.egg-info/PKG-INFO
+simplemath_khapp.egg-info/SOURCES.txt
+simplemath_khapp.egg-info/dependency_links.txt
+simplemath_khapp.egg-info/top_level.txt
