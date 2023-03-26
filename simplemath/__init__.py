@@ -1,8 +1,10 @@
+from . import fancy
 from . fancy import add as fancyadd
 from . fancy import sub as fancysub
 from . fancy import mul as fancymul
 from . fancy import div as fancydiv
 
+from . import pyadvanced
 from . pyadvanced import add as advancedadd
 from . pyadvanced import sub as advancedsub
 from . pyadvanced import mul as advancedmul

@@ -20,6 +20,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[project.urls]
+"Homepage" = "https://github.com/heliotech/simplemath"
+
 # (BETA) tells setuptools you will be using a readme file for the long description field for your pypi profile.
 [tool.setuptools.dynamic]
 readme = {file = ["README.rst"]}

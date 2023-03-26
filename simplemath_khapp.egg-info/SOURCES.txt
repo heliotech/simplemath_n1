@@ -7,6 +7,10 @@ simplemath/mutils.py
 simplemath/pyadvanced.py
 simplemath/simple.py
 simplemath/smlib.py
+simplemath/examples/__init__.py
+simplemath/examples/examples_advanced.py
+simplemath/examples/examples_fancy.py
+simplemath/examples/examples_simple.py
 simplemath_khapp.egg-info/PKG-INFO
 simplemath_khapp.egg-info/SOURCES.txt
 simplemath_khapp.egg-info/dependency_links.txt

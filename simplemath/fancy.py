@@ -100,6 +100,52 @@ def showNumber(num, marker=mrkDot, sep=" ", part=5,
     return f"{sgn}{numGraph}{decimalPart} ({num}){newLine0}", errMsg
 
 
+def representNumber(num, marker=mrkDot, sep=" ", part=None, DBG=False):
+    """ Getting graphical representation of the result
+
+    Args:
+        num: int - number to be graphically represented,
+        marker: str - char or code for a marker,
+        sep: str - number parts (sections) separator,
+        part: int - length of the number part (section),
+        pos: int - position of the number in the calculaiton, def. -1;
+            0 for the first position.
+    """
+
+    errMsg = ""
+    if not part:
+        part = 5 if num <= 10 else 10
+    parts = abs(num)//part
+    sgn = "" if sign(num) >= 0 else "(-)"
+    try:
+        if parts > 0:
+            mainPart = sep.join(marker*part for i in range(parts))
+            remainder = abs(num) - part*parts
+        else:
+            mainPart = marker*abs(num)
+            remainder = 0
+        remainderGraph = marker*remainder if remainder else ""
+        remainderGraph = (sep + remainderGraph if remainder > 0
+                          else remainderGraph)
+    except TypeError:
+        errMsg = ("A problem occured:\n"
+                  "only integer numbers can be represented, "
+                  f"but it happened to be {num}\n")
+        return f"(?) ({num})", errMsg
+    numGraph = mainPart + remainderGraph
+    printd(f"{part = }, {parts = }, {num = :>3}, {remainder = }", DBG=False)
+    printd(f"{num = }, {len(mainPart) = }, {remainder = },\n"
+           f"{len(remainderGraph) = } <= {remainderGraph}\n"
+           f"{numGraph = }",
+           src="getNumGraph", DBG=DBG)
+
+    newLine0 = "" if len(numGraph) < 21 else "\n"
+    return f"{newLine0}{sgn}{numGraph} ({num})", errMsg
+
+
+showNumber = representNumber
+
+
 def add(a, b, marker="•"):
     res = a + b
     res = round(res, 2) if len(str(abs(res) - int(abs(res)))) > 4 else res
@@ -135,7 +181,7 @@ def mul(a, b, marker="•"):
 
 
 def div(a, b, marker="•"):
-    res = a/b
+    res = a//b
     print("")
     a = int(a) if float(a).is_integer() else a
     b = int(b) if float(b).is_integer() else b
